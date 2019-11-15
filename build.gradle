@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+    id 'application'
+}
+
+group 'test'
+version '1.0-SNAPSHOT'
+
+javafx {
+    version = '12'
+    modules = ['javafx.media','javafx.controls']
+}
+
+application{
+    mainClassName = "$moduleName/test.App"
+}
+
+sourceCompatibility = 12
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+wrapper {
+    version = 6.0
+}
